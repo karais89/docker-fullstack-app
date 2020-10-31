@@ -42,10 +42,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       <div className="container">
-        {lists && lists.map((list, index) => {
-          <li key={index}>{list.value}</li>
-        })}
-
+        {lists && lists.map((list, index) => (
+            <li key={index}>{list.value} </li>
+          ))}
+        <br />
+            안녕하세요.
         <form className="example" onSubmit={submitHandler}>
           <input
             type="text"
