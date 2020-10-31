@@ -7,5 +7,3 @@ const pool = mysql.createPool({
     database: 'myapp'
 });
 exports.pool = pool;
-hctg56418250
-   
