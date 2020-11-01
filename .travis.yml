@@ -23,3 +23,16 @@ after_success:
     - docker push karais89/docker-frontend # 빌드된 이미지를 도커 허브에 푸시
     - docker push karais89/docker-backend
     - docker push karais89/docker-nginx
+
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-northeast-2"
+    app: "docker-fullstack-app"
+    env: "DockerFullstackApp-env"
+    bucket_name: elasticbeanstalk-ap-northeast-2-617906674571
+    bucket_path: "docker-fullstack-app"
+    on:
+        branch: master
+    
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
